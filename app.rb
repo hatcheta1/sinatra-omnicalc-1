@@ -18,13 +18,29 @@ get '/square/results' do
 end
 
 get("/square_root/new") do
-  "square_root"
+  erb(:square_root_new)
+end
+
+get("/square_root/results") do
+  @user_num = params.fetch("number").to_f
+
+  @square_root = Math.sqrt(@user_num)
+
+  erb(:square_root_results)
 end
 
 get("/payment/new") do
   "payment"
 end
 
+get("/payment/results") do
+  "results"
+end
+
 get("/random/new") do
   "random"
+end
+
+get("/random/results") do
+  "results"
 end
