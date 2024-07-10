@@ -5,7 +5,7 @@
     APR
   </dt>
   <dd>
-    <%= format('%.4f', @apr) %>%
+    <%= @apr.to_fs(:percentage, {:precision => 4}) %>
   </dd>
 
   <dt>
@@ -19,14 +19,14 @@
     Principal
   </dt>
   <dd>
-    $<%= format('%.2f', @principal) %>
+    <%= @principal.to_fs(:currency) %>
   </dd>
 
   <dt>
     Payment
   </dt>
   <dd>
-    $<%= format('%.2f', @payment) %>
+    <%= @payment.to_fs(:currency) %>
   </dd>
 </dl>
 

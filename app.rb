@@ -50,9 +50,14 @@ get("/payment/results") do
 end
 
 get("/random/new") do
-  "random"
+  erb(:random_new)
 end
 
 get("/random/results") do
-  "results"
+  @min = params.fetch("minimum").to_f
+  @max = params.fetch("maximum").to_f
+
+  @result = rand(@min..@max)
+  
+  erb(:random_results)
 end

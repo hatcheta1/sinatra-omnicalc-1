@@ -1,0 +1,24 @@
+<style>
+  .random {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+
+<h1>Pick a random number</h1>
+
+<div classs="random">
+<form action="/random/results">
+  <div>
+    <label for="min">Minimum</label>
+    <input id="min" type="text" name="minimum" placeholder="E.g. 1.5">
+  </div>
+
+  <div>
+    <label for="max">Maximum</label>
+    <input id="max" type="text" name="maximum" placeholder="E.g. 4.5">
+  </div>
+
+  <button>Pick random number</button>
+</form>
+</div>
