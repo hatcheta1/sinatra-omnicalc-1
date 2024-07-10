@@ -1,0 +1,30 @@
+<style>
+  .payment {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+
+<h1>Calculate your payment</h1>
+
+<div class="payment">
+  <form action="/payment/results">
+  <div>
+    <label for="APR">APR</label>
+    <input id="APR" type="text" name="apr" placeholder="E.g. 5.42">
+
+  </div>
+
+  <div>
+    <label for="num_years">Number of years</label>
+    <input id="num_years" type="text" name="years" placeholder="How many years to repayment?">
+  </div>
+
+  <div>
+    <label for="pay_principal">Principal</label>
+    <input id="pay_principal" type="text" name="principal" placeholder="How much principal?">
+  </div>
+
+  <button>Calculate monthly payment</button>
+</form>
+</div>

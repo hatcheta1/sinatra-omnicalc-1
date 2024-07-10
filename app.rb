@@ -30,11 +30,23 @@ get("/square_root/results") do
 end
 
 get("/payment/new") do
-  "payment"
+  erb(:payment_new)
 end
 
 get("/payment/results") do
-  "results"
+  @apr = params.fetch("apr").to_f
+  @years = params.fetch("years").to_f
+  @principal = params.fetch("principal").to_f
+
+  rate_per_period = (@apr / 100) / 12
+  num_of_periods = @years * 12
+
+  numerator = rate_per_period * @principal
+  denominator = 1 - (1 + rate_per_period) ** -num_of_periods
+
+  @payment = numerator / denominator
+
+  erb(:payment_results)
 end
 
 get("/random/new") do
